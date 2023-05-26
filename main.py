@@ -6,6 +6,7 @@ from widgets import storytell
 from play import play
 import time
 
+nMetodo = []
 # 
 def clear(win):
     for item in win.items[:]:
@@ -42,9 +43,9 @@ def main():
     timepassed = endTime - startTime
 
     if lost:
-        storytell(win, "you needed {} seconds to finish the game and you lost".format(round(timepassed)))
+        storytell(win, "Tu tenias {} segundos para finalizar el juego y perdiste!".format(round(timepassed)))
     else:
-        storytell(win, "you needed {} seconds to finish the game and you won!".format(round(timepassed)))
+        storytell(win, "Tu tenias {} segundos para finalizar el juego y ganaste!".format(round(timepassed)))
 
     win.close()
 
