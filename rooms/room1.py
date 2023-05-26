@@ -18,7 +18,7 @@ def room1(win, inventory):
   img1.draw(win)
 
 # drawing user
-  user = Image(Point(20,2), "rooms/thief.gif")
+  user = Image(Point(20,1), "rooms/thief.gif")
   user.draw(win)
 
 # drawing inventory label
@@ -59,19 +59,19 @@ def room1(win, inventory):
 
       k = win.getKey()
      
-      if k == "Right" and user.getAnchor().getX() != 32:
+      if k == "Right" and user.getAnchor().getX() != 30:
           user.move(1, 0)
-      if k == "Left" and user.getAnchor().getX() != 14:
+      if k == "Left" and user.getAnchor().getX() != 10:
           user.move(-1, 0)
-      if k == "Up" and user.getAnchor().getY() != 16:
+      if k == "Up" and user.getAnchor().getY() != 20:
           user.move(0, 1)
-      if k == "Down" and user.getAnchor().getY() != 2:
+      if k == "Down" and user.getAnchor().getY() != 0:
           user.move(0, -1)
 
-          if k == 'G' or k == 'g':
-            if get_item.active:
-             inventory.append(item)
-             inventoryTexts.append(Text(Point(5, last), item))
+      if k == 'G' or k == 'g':
+        if get_item.active:
+            inventory.append(item)
+            inventoryTexts.append(Text(Point(5, last), item))
             last = last - 1
             inventoryTexts[-1].draw(win)
 

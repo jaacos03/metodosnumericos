@@ -6,6 +6,8 @@ from rooms.room3 import room3
 from rooms.room4 import room4
 from rooms.room5 import room5
 
+nMetodo = []
+
 
 def play(win, inventory):
     lost = False

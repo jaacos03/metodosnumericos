@@ -2,7 +2,7 @@ import random
 import numpy as np
 from scipy.optimize import fsolve
 def rand():
-    n = random.randint(1,32)
+    n = random.randint(1,15)
     return n
 """
  n = 1-5 interp lineal
@@ -146,11 +146,11 @@ def problema(n):
         if n == 15:
             print("x - 2y + 3z = 5, 2x + y - z = 4, 3x - y + 2z = 7")
     elif n <= 20:
-
+        a = 0
     elif n <= 28:
-
+        a=0
     else:
-
+        a=0
 def resolucion(n):
     resultado = 0
     if n <= 5:

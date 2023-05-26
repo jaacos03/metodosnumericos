@@ -1,9 +1,6 @@
 # room2.py
 # The function draws and activates a room2
 import sys
-
-import main
-
 sys.path.append("..")
 from graphics import *
 from button import Button
@@ -12,6 +9,7 @@ import math
 import random
 import sympy as sp
 import a1
+import jo
 
 
 def room2(win, inventory):
@@ -120,9 +118,9 @@ def room2(win, inventory):
                 cont = 0
                 while (cont == 0):
                     numrand = a1.rand()
-                    if (numrand not in main.nMetodo):
+                    if (numrand not in jo.nMetodo):
                         metodo = a1.filt(numrand)
-                        main.nMetodo.append(numrand)
+                        jo.nMetodo.append(numrand)
                         cont += 1
                 print(str(a1.resolucion(numrand)))
                 storytell(win, "Resuelve la siguiente funcion por" + metodo)
