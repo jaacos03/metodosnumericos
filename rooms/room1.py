@@ -6,6 +6,7 @@ from graphics import *
 from button import Button
 from widgets import storytell
 import time
+import metodos
 
 def room1(win, inventory):
 
@@ -40,27 +41,23 @@ def room1(win, inventory):
 
   # setting up the key items for the room and what can be collected
   main_item = 'vela'
-  things_in_room = {"Point(21.0,11.0)": "vela", "Point(28.0,3.0)": "vela", "Point(12.0,2.0)": "plant"}
+  things_in_room = {"Point(21.0,11.0)": "vela", "Point(28.0,3.0)": "vela", "Point(12.0,2.0)": "planta"}
 
   # storytell
 
 
-  # Storytell The beginning
   storytell(win,
-        "Trata de escapar")
-  storytell(win, "Te puedes mover con las flechas")
+        "Bienvenido al room escape de metodos numericos")
+  storytell(win, "Trata de escapar")
   storytell(win,
-        " ")
-  storytell(win, "")
+        " Puedes moverte con las flechas")
 
 
   while continueGame is True and lost is False:
 
-      # ask for key input (arrows)
+
       k = win.getKey()
-      # check which arrow was pressed and move the user accordingly 
-      # while also checking that the user doesn't go outside the room's
-      # borders
+     
       if k == "Right" and user.getAnchor().getX() != 30:
           user.move(1, 0)
       if k == "Left" and user.getAnchor().getX() != 10:
@@ -77,23 +74,22 @@ def room1(win, inventory):
             last = last - 1
             inventoryTexts[-1].draw(win)
 
-      # Getting user location
+ 
       usx = user.getAnchor().getX()
       usy = user.getAnchor().getY()
 
       user_pos = "Point({0},{1})".format(usx, usy)
-      # Activating a pickup button if the user is standing on a vela
+
       if user_pos in things_in_room.keys() and things_in_room[user_pos] not in inventory:
           item = things_in_room[user_pos]
           get_item.activate()
       else:
           get_item.deactivate()
         
-      # checks that if user tries to go through the 
-      # left door, he/she dies
+
       if usx == Point(10.0, 7.0).getX() and usy == Point(10.0, 7.0).getY():
-        storytell(win,"The thief went into the living room and the dog got woken up and barked till the neighbours came. You loose! The thief got arrested.")
-        continueGame = False
+        storytell(win,"")
+        continueGame = True
         lost = True
 
       # checking the ladder
